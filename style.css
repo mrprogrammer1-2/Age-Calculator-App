@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    --input-size: 32px;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--Off-white);
+    font-family: "Poppins", sans-serif;
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin-bottom: .2rem;
+    font-weight: 400;
+    color: var(--Smokey-grey);
+    font-size: 11px;
+}
+img {
+    width: 32px;
+    height: 32px;
+}
+
+.age-calculator {
+    position: fixed;
+    background-color: var(--White);
+    width: 550px;
+    max-width: 95vw;
+    padding: 3rem;
+    border-radius: 15px 15px 100px 15px;
+}
+
+.age-calculator .inputs-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.inputs-container > div {
+    cursor: pointer;
+    position: relative;
+}
+.inputs-container > div > * {
+    cursor: pointer;
+}
+
+.inputs-container input {
+    height: 3rem;
+    width: 7rem;
+    border-radius: 5px;
+    font-size: var(--input-size);
+    padding: .75rem 1rem;
+    font-weight: 700;
+    outline: none;
+    border: 3px solid var(--Light-grey);
+    caret-color: var(--Purple);
+}
+.inputs-container input:focus {
+    border: 3px solid var(--Purple);
+}
+
+.age-calculator form {
+    position: relative;
+    padding-bottom: 70px;
+    border-bottom: 1px solid var(--Light-grey);
+    margin-bottom: 30px;
+}
+
+.inputs-container input:hover {
+    border: 3px solid var(--Purple);
+}
+.age-calculator form button {
+    border: none;
+    cursor: pointer;
+    background-color: var(--Purple);
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.3s;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+}
+
+.age-calculator form button:hover {
+    background-color: var(--Off-black);
+}
+
+.age-calculator .results {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.age-calculator .results span {
+    color: var(--Purple);
+}
+
+.age-calculator .form-alert {
+    display: none;
+    color: var(--Light-red);
+    position: absolute;
+    bottom: -25px;
+}
+
+.inputs-container > div.error label {
+    color: var(--Light-red);
+}
+
+.inputs-container > div.error input {
+    border-color: var(--Light-red);
+}
+
+@media (max-width: 768px) {
+    .age-calculator {
+        width: 400px;
+        max-width: 95vw;
+        padding: 4rem 2rem;
+    }
+    .age-calculator .inputs-container {
+        gap: 1.5rem;
+    }
+    .inputs-container input {
+        height: 3rem;
+        width: 7rem;
+        font-size: 25px;
+    }
+    .age-calculator form button {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .age-calculator .form-alert {
+        bottom: -40px;
+    }
+}
+
+@media (max-width: 540px) {
+    .age-calculator {
+        max-width: 90vw;
+        max-height: 95vh;
+        padding: 2.5rem 1.1rem;
+    }
+    .inputs-container input {
+        height: 2.3rem;
+        width: 3.5rem;
+        font-size: 20px;
+        padding: .5rem;
+    }
+    .age-calculator .form-alert {
+        bottom: -32px;
+        line-height: 10px;
+    }
+}

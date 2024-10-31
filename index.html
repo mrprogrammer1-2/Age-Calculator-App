@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="age-calculator">
+      <form>
+        <div class="inputs-container">
+          <div class="day-div">
+            <label for="day">DAY</label>
+            <input
+              data-max="2"
+              type="text"
+              id="day"
+              minlength="1"
+              maxlength="2"
+              placeholder="DD"
+              autocomplete="off"
+              required
+            />
+            <div class="form-alert" id="day-alert">This field is required</div>
+            <div class="form-alert" id="day-invalid">Must be a valid day</div>
+          </div>
+          <div class="month-div">
+            <label for="month">MONTH</label>
+            <input
+              data-max="2"
+              type="text"
+              id="month"
+              minlength="2"
+              maxlength="2"
+              placeholder="MM"
+              autocomplete="off"
+              required
+            />
+            <div class="form-alert" id="month-alert">
+              This field is required
+            </div>
+            <div class="form-alert" id="month-invalid">
+              Must be a valid month
+            </div>
+          </div>
+          <div class="year-div">
+            <label for="year">YEAR</label>
+            <input
+              data-max="4"
+              type="text"
+              id="year"
+              minlength="4"
+              maxlength="4"
+              placeholder="YYYY"
+              autocomplete="off"
+              required
+            />
+            <div class="form-alert" id="year-alert">This field is required</div>
+            <div class="form-alert" id="year-invalid">Must be in the past</div>
+          </div>
+        </div>
+        <button id="calculate" type="button">
+          <img src="assets/images/icon-arrow.svg" />
+        </button>
+      </form>
+      <div class="results">
+        <div class="year-result">
+          <span class="year">--</span>
+          years
+        </div>
+        <div class="month-result">
+          <span class="month">--</span>
+          months
+        </div>
+        <div class="day-result">
+          <span class="day">--</span>
+          days
+        </div>
+      </div>
+    </div>
+
+    <!-- Day DD Month MM Year YYYY -- years -- months -- days -->
+
+    <script src="main.js"></script>
+  </body>
+</html>
